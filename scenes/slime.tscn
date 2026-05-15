@@ -39,6 +39,9 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p2gj0"]
+size = Vector2(10, 12)
+
 [node name="Slime" type="PathFollow2D" unique_id=644984301]
 z_index = 5
 rotates = false
@@ -58,3 +61,10 @@ offset_top = -17.0
 offset_right = 10.0
 offset_bottom = -13.0
 show_percentage = false
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1851463117 groups=["enemy"]]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=457366230]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_p2gj0")
