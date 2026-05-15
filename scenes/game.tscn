@@ -2,8 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://b5hy6inogsb1h" path="res://sprites/world_tileset.png" id="1_lnu2h"]
 [ext_resource type="Script" uid="uid://clcrsg71tbwd6" path="res://scripts/path_2d.gd" id="2_iywne"]
-[ext_resource type="Script" uid="uid://cpaa631mxm6to" path="res://scripts/path_follow_2d.gd" id="2_lbhrr"]
-[ext_resource type="PackedScene" uid="uid://qgqxysffu8ep" path="res://scenes/slime.tscn" id="3_iywne"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e2o6t"]
 texture = ExtResource("1_lnu2h")
@@ -159,17 +157,8 @@ tile_set = SubResource("TileSet_feb5d")
 curve = SubResource("Curve2D_p57ef")
 script = ExtResource("2_iywne")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="TileMapLayer/Path2D" unique_id=2112840692]
-position = Vector2(23, 26)
-rotation = 1.5615374
-rotates = false
-script = ExtResource("2_lbhrr")
-
-[node name="Slime" parent="TileMapLayer/Path2D/PathFollow2D" unique_id=1418964279 instance=ExtResource("3_iywne")]
-position = Vector2(-0.99995714, -0.0092588095)
-rotation = -1.5707964
-
 [node name="Timer" type="Timer" parent="TileMapLayer/Path2D" unique_id=1753711459]
+wait_time = 0.6
 autostart = true
 
 [connection signal="timeout" from="TileMapLayer/Path2D/Timer" to="TileMapLayer/Path2D" method="spawn_slime"]

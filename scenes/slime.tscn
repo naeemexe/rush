@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://qgqxysffu8ep"]
 
 [ext_resource type="Texture2D" uid="uid://dnpd0cnqbemqs" path="res://sprites/slime_green.png" id="1_371uh"]
+[ext_resource type="Script" uid="uid://cpaa631mxm6to" path="res://scripts/path_follow_2d.gd" id="1_p2gj0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p2gj0"]
 atlas = ExtResource("1_371uh")
@@ -38,9 +39,13 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="Slime" type="Node2D" unique_id=1418964279]
+[node name="Slime" type="PathFollow2D" unique_id=644984301]
+z_index = 5
+loop = false
+script = ExtResource("1_p2gj0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1756352355]
+z_index = 5
 sprite_frames = SubResource("SpriteFrames_fd6lc")
 autoplay = "default"
-frame_progress = 0.32010347
+frame_progress = 0.8638415
