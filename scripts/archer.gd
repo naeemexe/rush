@@ -11,13 +11,11 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		update_target()
 		print("Slime Detected")
 
-
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	if area.is_in_group("enemy"):
 		var slime = area.get_parent()
 		enemies.erase(slime)
 		update_target()
-		
 		
 func update_target():
 	var alive_enemies = []
