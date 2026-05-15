@@ -41,6 +41,7 @@ animations = [{
 
 [node name="Slime" type="PathFollow2D" unique_id=644984301]
 z_index = 5
+rotates = false
 loop = false
 script = ExtResource("1_p2gj0")
 
