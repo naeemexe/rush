@@ -3,7 +3,7 @@ extends PathFollow2D
 const SPEED = 100
 
 var max_health = 100
-var health = 80
+var health = 100
 
 @onready var health_bar = $ProgressBar
 

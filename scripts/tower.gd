@@ -8,9 +8,6 @@ var health = 100
 func _ready() -> void:
 	health_bar.max_value = max_health
 	health_bar.value = health
-
-func _process(delta: float) -> void:
-	pass
 	
 func take_damage(amount):
 	health -= amount
@@ -19,9 +16,7 @@ func take_damage(amount):
 	health_bar.value = health
 
 	if health <= 0:
-		get_tree().reload_current_scene()
+		get_tree().call_deferred("reload_current_scene")
 	
-
-
-func _on_area_2d_area_entered(area: Area2D) -> void:
+func _on_area_2d_area_entered(_area: Area2D) -> void:
 	take_damage(5)
